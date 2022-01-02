@@ -5,6 +5,7 @@ import Product from './product/Product';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import Header from './header/Header';
 import Home from './home/Home';
+import Contact from './contact/Contact';
 function App() {
   const products=[
     {
@@ -30,8 +31,9 @@ function App() {
       <Router>
         <Header/>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<div><Home/><Product products={products}/></div>}/>
           <Route path='/product' element={<Product products={products}/>}/>
+          <Route path='/contact' element={<Contact/>}/>
          
         </Routes>
         </Router>

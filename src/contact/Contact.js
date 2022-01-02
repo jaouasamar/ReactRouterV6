@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
+import './Contact.css'
 
 const Contact = () => {
     return (
-        <div>
+        <div className='contact'>
            <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>

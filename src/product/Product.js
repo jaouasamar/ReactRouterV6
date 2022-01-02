@@ -1,28 +1,22 @@
 import React from 'react'
-import { Table } from 'react-bootstrap'
+import { Button, Card, Table } from 'react-bootstrap'
+import "./Product.css"
 
 const Product = ({products}) => {
     return (
-        <div>
+        <div className='produit'>
             {products.map(elt=>
-                <Table striped bordered hover>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{elt.id}</td>
-                    <td>{elt.imgSrc}</td>
-                    <td>{elt.name}</td>
-                    <td>{elt.price}</td>
-                  </tr>
-                </tbody>
-              </Table>)}
+               <Card style={{ width: '19rem' }} key={elt.id}>
+               <Card.Img variant="top" src={elt.imgSrc} width="100px" height="180" />
+               <Card.Body>
+                 <Card.Title>{elt.name}</Card.Title>
+                 <Card.Text>
+                  {elt.price}
+                 </Card.Text>
+                 <Button variant="primary">Buy</Button>
+               </Card.Body>
+             </Card>
+               )}
         </div>
     )
 }
